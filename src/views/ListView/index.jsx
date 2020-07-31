@@ -26,44 +26,51 @@ class ListView extends Component {
       "Load Detail",
     ];
     return (
-      <div className="row justify-content-center mt-4">
-        <div className="col-sm-10">
-          <div className="dash-container space-8">
-            <h5> Active Locations </h5>
-            <div style={{ margin: 20 }}>
-              {loading ? (
-                <Load title="Locations" />
-              ) : (
-                <>
-                  {list && list.result && list.result.length === 0 ? (
-                    <div style={{ marginTop: "60px" }} className="text-center">
-                      <h3 className="dimgray">No Active Location Found</h3>
-                      <p className="dimgray">No, Active Location Found</p>
-                    </div>
-                  ) : (
-                    <Table content={tableContent}>
-                      {list &&
-                        list.result &&
-                        list.result.length > 0 &&
-                        list.result
-                          .slice(0, listItems)
-                          .map((item, index) => (
-                            <ListInner
-                              key={item.taxonid}
-                              item={item}
-                              fetchList={list}
-                            />
-                          ))}
-                    </Table>
-                  )}
-                  <button
-                    className="customButton btn-location-red "
-                    onClick={() => this.setState({ listItems: listItems + 10 })}
-                  >
-                    Show more...
-                  </button>
-                </>
-              )}
+      <div class="container-fluid">
+        <div className="row justify-content-center mt-4">
+          <div className="col-sm-10">
+            <div className="dash-container ">
+              <h5> Active Locations </h5>
+              <div style={{ margin: 20 }}>
+                {loading ? (
+                  <Load title="Locations" />
+                ) : (
+                  <>
+                    {list && list.result && list.result.length === 0 ? (
+                      <div
+                        style={{ marginTop: "60px" }}
+                        className="text-center"
+                      >
+                        <h3 className="dimgray">No Active Location Found</h3>
+                        <p className="dimgray">No, Active Location Found</p>
+                      </div>
+                    ) : (
+                      <Table content={tableContent}>
+                        {list &&
+                          list.result &&
+                          list.result.length > 0 &&
+                          list.result
+                            .slice(0, listItems)
+                            .map((item, index) => (
+                              <ListInner
+                                key={item.taxonid}
+                                item={item}
+                                fetchList={list}
+                              />
+                            ))}
+                      </Table>
+                    )}
+                    <button
+                      className="customButton btn-location-red "
+                      onClick={() =>
+                        this.setState({ listItems: listItems + 10 })
+                      }
+                    >
+                      Show more...
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
