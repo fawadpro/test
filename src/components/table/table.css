@@ -1,0 +1,34 @@
+.table-bordered td {
+  border: none !important;
+  border-top: solid 1px #ccc !important;
+}
+
+.table-bordered th {
+  border: none !important;
+  border-top: solid 1px #ccc !important;
+}
+
+.button-group {
+  text-align: right;
+  margin: 10px 0px;
+}
+
+.button-top {
+  margin-left: 10px;
+}
+
+.table-overflow {
+  overflow: scroll;
+  font-size: 12px;
+}
+
+.button-table {
+  padding: 5px;
+}
+
+.max-table-width {
+  max-width: 110px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
